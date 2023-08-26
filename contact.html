@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/jpg" href="assets/favicon.png" />
+    <title>Amazing Events</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-3" href="#">
+          <img class="logo-amazing" src="assets/amazing_brand.png" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link link-nav active"
+              aria-current="page"
+              href="index.html"
+            >
+              Home
+            </a>
+          </li>
+          <li class="nav-item link-nav">
+            <a class="nav-link" href="upcoming_events.html">Upcoming Events</a>
+          </li>
+          <li class="nav-item link-nav">
+            <a class="nav-link" href="past_events.html">Past Events</a>
+          </li>
+          <li class="nav-item link-nav">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item link-nav">
+            <a class="nav-link" href="stats.html">Stats</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="false"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active bg-primary"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            class="active bg-primary"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            class="active bg-primary"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="assets/music_concert.jpg"
+              class="img-carousel"
+              alt="music_concert"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-primario">The best parties!</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets/food_fair.jpg"
+              class="img-carousel"
+              alt="food_fair"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-primario">Food fest!</h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="assets/optional_banner_2.jpg"
+              class="img-carousel"
+              alt="cine"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-primario">Enjoy the Cinema!</h1>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="container my-5">
+        <h1>Contact</h1>
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlInput0" class="form-label">
+              Name:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput0"
+              placeholder="Romano Rodrigo"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Email address:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">
+              Example textarea:
+            </label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <hr />
+    <footer class="mx-5 my-4 d-flex justify-content-between align-items-center">
+      <div class="d-flex flex-wrap">
+        <a href="facebook.com" class="m-3">
+          <img src="assets/facebook.png" class="logo-redes" alt="facebook" />
+        </a>
+        <a href="instagram.com" class="m-3">
+          <img src="assets/instagram.png" class="logo-redes" alt="instagram" />
+        </a>
+        <a href="whatsapp.com" class="m-3">
+          <img src="assets/whatsapp.png" class="logo-redes" alt="whatsapp" />
+        </a>
+      </div>
+      <p class="d-flex justify-content-around">
+        Copyright Amazing Events 2023.
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

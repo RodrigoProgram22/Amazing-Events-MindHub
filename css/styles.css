@@ -1,0 +1,55 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  --color-primario: #d80267;
+  --color-secundario: white;
+  --color-terciario: #212529;
+}
+/* main */
+a{
+  text-decoration: none;
+  color: var(--color-secundario);
+}
+a:hover{
+  text-decoration: none;
+  color: var(--color-secundario);
+}
+.text-primario {
+  color: var(--color-primario);
+}
+.bg-primary {
+  background-color: var(--color-primario) !important;
+  color: var(--color-secundario);
+}
+.btn-primary {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  border: 0px;
+}
+.btn-primary:hover {
+  background-color: rgb(107, 26, 142);
+  color: var(--color-secundario);
+}
+/* nav */
+.logo-amazing {
+  width: 100px;
+  object-fit: contain;
+}
+.link-nav {
+  width: 100px;
+}
+.link-nav:hover {
+  color: rgb(240, 39, 203);
+}
+/* header */
+.img-carousel {
+  width: 100vw;
+  height: 200px;
+  object-fit: cover;
+}
+.logo-redes{
+    width: 40px;
+    object-fit: contain;
+}
