@@ -36,7 +36,6 @@ function imprimirCards(array,elemento){
   })
   elemento.innerHTML = estructura;
 }
-
 imprimirCards(events,$rowCards);
 
 function templateCheck(string){
@@ -65,21 +64,40 @@ function imprimirCheck(array,elemento){
 }
 imprimirCheck(catSinRep,$checkDiv);
 
-$checkDiv.addEventListener("change",()=>{
+function filtroCheck(array){
   let nodeList = document.querySelectorAll("input[type='checkbox']:checked");
   let arrayValores = Array.from(nodeList).map(objet => objet.value);
-  let objetosFiltrados = events.filter(objet => arrayValores.includes(objet.category));
-  imprimirCards(objetosFiltrados,$rowCards);
-  if (objetosFiltrados.length == 0) {
-    imprimirCards(events,$rowCards);
+  let objetosFiltrados = array.filter(objet => arrayValores.includes(objet.category));
+  if(nodeList.length === 0){
+    return array;
+  }
+  return objetosFiltrados;
+}
+function filtroSearch(array,input){
+  let inputText =input.value.toLowerCase();
+  let objetosFiltrados = array.filter(objet => objet.name.toLowerCase().includes(inputText));
+  return objetosFiltrados;
+}
+function filtroCombinado(array,input){
+  const filtro1 = filtroCheck(array);
+  const filtro2 = filtroSearch(filtro1,input);
+  return filtro2;
+}
+function msjError(elemento){
+  elemento.innerHTML = "<div class='container text-danger border border-danger p-3 rounded'>No se encontraron resultados.</div>"
+}
+$inputSearch.addEventListener("keyup", ()=>{
+  const returnFiltrados = filtroCombinado(events,$inputSearch);
+  imprimirCards(returnFiltrados,$rowCards);
+  if (returnFiltrados.length == 0) {
+    msjError($rowCards);
   }
 })
 
-$inputSearch.addEventListener("keyup", ()=>{
-  let inputText = e.target.value.toLowerCase();
-  let objetosFiltrados = events.filter(objet => objet.name.toLowerCase().includes(inputText));
-  imprimirCards(objetosFiltrados,$rowCards);
-  if (inputText.length == 0) {
-    imprimirCards(events,$rowCards);
+$checkDiv.addEventListener("change",()=>{
+  const returnFiltrados = filtroCombinado(events,$inputSearch);
+  imprimirCards(returnFiltrados,$rowCards);
+  if (returnFiltrados.length == 0) {
+    msjError($rowCards);
   }
 })
