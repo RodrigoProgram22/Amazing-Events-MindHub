@@ -1,11 +1,34 @@
-const events = data.events;
 const $rowCards = document.getElementById("rowCards");
 const $checkDiv = document.getElementById("check");
 const $inputSearch = document.getElementById("search");
-const catSinRep = [ ... new Set(events.map(objet => objet.category)) ];
-const fechaActual = Date.parse(data.currentDate);
-let eventosFiltrados = events.filter(objet =>  Date.parse(objet.date) >= fechaActual );
 
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+.then(resp =>
+  resp.json()
+).then(data => {
+  const events = data.events;
+  const fechaActual = Date.parse(data.currentDate);
+  const eventosFiltrados = events.filter(objet =>  Date.parse(objet.date) >= fechaActual );
+  const catSinRep = [ ... new Set(events.map(objet => objet.category)) ];
+  imprimirCards(eventosFiltrados,$rowCards);
+  imprimirCheck(catSinRep,$checkDiv);
+  $inputSearch.addEventListener("keyup", ()=>{
+  const returnFiltrados = filtroCombinado(eventosFiltrados,$inputSearch);
+  imprimirCards(returnFiltrados,$rowCards);
+  if (returnFiltrados.length == 0) {
+    msjError($rowCards);
+  }
+  })
+  $checkDiv.addEventListener("change",()=>{
+  const returnFiltrados = filtroCombinado(eventosFiltrados,$inputSearch);
+  imprimirCards(returnFiltrados,$rowCards);
+  if (returnFiltrados.length == 0) {
+    msjError($rowCards);
+  }
+  })
+}).catch(error =>{
+  console.log(error);
+})
 function templateCards(objet) {
   let template ="";
   template = `
@@ -40,9 +63,6 @@ function imprimirCards(array,elemento){
   })
   elemento.innerHTML = estructura;
 }
-
-imprimirCards(eventosFiltrados,$rowCards);
-
 function templateCheck(string){
   let template = "";
   template = `
@@ -67,8 +87,6 @@ function imprimirCheck(array,elemento){
   })
   elemento.innerHTML = estructura;
 }
-imprimirCheck(catSinRep,$checkDiv);
-
 function filtroCheck(array){
   let nodeList = document.querySelectorAll("input[type='checkbox']:checked");
   let arrayValores = Array.from(nodeList).map(objet => objet.value);
@@ -91,18 +109,3 @@ function filtroCombinado(array,input){
 function msjError(elemento){
   elemento.innerHTML = "<div class='container text-danger border border-danger p-3 rounded'>No se encontraron resultados.</div>"
 }
-$inputSearch.addEventListener("keyup", ()=>{
-  const returnFiltrados = filtroCombinado(eventosFiltrados,$inputSearch);
-  imprimirCards(returnFiltrados,$rowCards);
-  if (returnFiltrados.length == 0) {
-    msjError($rowCards);
-  }
-})
-
-$checkDiv.addEventListener("change",()=>{
-  const returnFiltrados = filtroCombinado(eventosFiltrados,$inputSearch);
-  imprimirCards(returnFiltrados,$rowCards);
-  if (returnFiltrados.length == 0) {
-    msjError($rowCards);
-  }
-})
