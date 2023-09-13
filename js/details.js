@@ -14,25 +14,47 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
 
 function crearTemplate(objeto) {
   let template = "";
-  return (template = `
-        <div class="col-md-6 d-flex align-items-center">
-            <img src="${objeto.image}" class="img-fluid rounded " alt="${objeto.name}" />
-        </div>
-        <div class="col-md-4">
-          <div class="card-body">
-            <h1 class="card-title">${objeto.name}</h1>
-            <p class="card-text">
-              ${objeto.description}
-            </p>
-            <p><b>Date: </b> ${objeto.date}</p>
-            <p><b>Category: </b> ${objeto.category}</p>
-            <p><b>Place: </b> ${objeto.place}</p>
-            <p><b>Assistance: </b> ${objeto.assistance}</p>
-            <p><b>Capacity: </b> ${objeto.capacity}</p>
-            <p><b>Price: </b>${objeto.price}</p>
+  if (objeto.assistance) {
+    return template = `
+          <div class="col-md-6 d-flex align-items-center">
+              <img src="${objeto.image}" class="img-fluid rounded " alt="${objeto.name}" />
           </div>
-        </div>
-    `);
+          <div class="col-md-4">
+            <div class="card-body">
+              <h1 class="card-title">${objeto.name}</h1>
+              <p class="card-text">
+                ${objeto.description}
+              </p>
+              <p><b>Date: </b> ${objeto.date}</p>
+              <p><b>Category: </b> ${objeto.category}</p>
+              <p><b>Place: </b> ${objeto.place}</p>
+              <p><b>Assistance: </b> ${objeto.assistance}</p>
+              <p><b>Capacity: </b> ${objeto.capacity}</p>
+              <p><b>Price: </b>${objeto.price}</p>
+            </div>
+          </div>
+      `;
+  }else{
+    return template = `
+          <div class="col-md-6 d-flex align-items-center">
+              <img src="${objeto.image}" class="img-fluid rounded " alt="${objeto.name}" />
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <h1 class="card-title">${objeto.name}</h1>
+              <p class="card-text">
+                ${objeto.description}
+              </p>
+              <p><b>Date: </b> ${objeto.date}</p>
+              <p><b>Category: </b> ${objeto.category}</p>
+              <p><b>Place: </b> ${objeto.place}</p>
+              <p><b>Estimate: </b> ${objeto.estimate}</p>
+              <p><b>Capacity: </b> ${objeto.capacity}</p>
+              <p><b>Price: </b>${objeto.price}</p>
+            </div>
+          </div>
+      `;
+  }
 }
 function imprimirDetails(elemento, objeto) {
   elemento.innerHTML = crearTemplate(objeto);

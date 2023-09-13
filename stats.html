@@ -36,11 +36,7 @@
       <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
           <li class="nav-item">
-            <a
-              class="nav-link link-nav"
-              aria-current="page"
-              href="index.html"
-            >
+            <a class="nav-link link-nav" aria-current="page" href="index.html">
               Home
             </a>
           </li>
@@ -156,20 +152,25 @@
           </thead>
           <tbody class="table-danger">
             <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td id="mayorA"></td>
+              <td id="menorA"></td>
+              <td id="mayorC"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table my-5">
+          <thead class="table-dark">
+            <tr>
+              <th colspan="3">Past events statistics by category</th>
             </tr>
             <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <th scope="col">Categories</th>
+              <th scope="col">Revenues (Estimated)</th>
+              <th scope="col">Percentage of assistance</th>
             </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
+          </thead>
+          <tbody class="table-danger" id="passCategory">
+          
           </tbody>
         </table>
         <table class="table my-0">
@@ -179,55 +180,11 @@
             </tr>
             <tr>
               <th scope="col">Categories</th>
-              <th scope="col">Revenues</th>
-              <th scope="col">Percentage </th>
+              <th scope="col">Revenues (Estimated)</th>
+              <th scope="col">Percentage of assistance (Estimated)</th>
             </tr>
           </thead>
-          <tbody class="table-danger">
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-        <table class="table my-0">
-          <thead class="table-dark">
-            <tr>
-              <th colspan="3">Past events statistics by category</th>
-            </tr>
-            <tr>
-              <th scope="col">Categories</th>
-              <th scope="col">Revenues</th>
-              <th scope="col">Percentage</th>
-            </tr>
-          </thead>
-          <tbody class="table-danger">
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
+          <tbody class="table-danger" id="upcomingCategory">
           </tbody>
         </table>
       </section>
@@ -254,5 +211,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/stats.js"></script>
   </body>
 </html>
