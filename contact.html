@@ -18,7 +18,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand mx-3" href="#">
+        <a class="navbar-brand mx-3" href="index.html">
           <img class="logo-amazing" src="assets/amazing_brand.png" alt="logo" />
         </a>
         <button
@@ -181,7 +181,7 @@
             ></textarea>
           </div>
           <div class="text-center">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit" onclick="send()">Send</button>
           </div>
         </form>
       </section>
@@ -189,13 +189,13 @@
     <hr />
     <footer class="mx-5 my-4 d-flex justify-content-between align-items-center">
       <div class="d-flex flex-wrap">
-        <a href="facebook.com" class="m-3">
+        <a href="https://www.facebook.com/" target="_blank" class="m-3">
           <img src="assets/facebook.png" class="logo-redes" alt="facebook" />
         </a>
-        <a href="instagram.com" class="m-3">
+        <a href="https://www.instagram.com/" target="_blank" class="m-3">
           <img src="assets/instagram.png" class="logo-redes" alt="instagram" />
         </a>
-        <a href="whatsapp.com" class="m-3">
+        <a href="https://web.whatsapp.com" target="_blank" class="m-3">
           <img src="assets/whatsapp.png" class="logo-redes" alt="whatsapp" />
         </a>
       </div>
@@ -208,5 +208,10 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function send(){
+        alert("Esta función no está disponible.")
+      }
+    </script>
   </body>
 </html>

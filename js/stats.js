@@ -27,8 +27,8 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
     const eventoMasPorcentajeAsis = passEvent[passEvent.length - 1];
     const eventoBajoPorcentajeAsis = passEvent[0];
     const eventoMayorCapacidad = events.sort((a, b) => a.capacity - b.capacity);
-    $mayorAsis.innerHTML = eventoMasPorcentajeAsis.name + " " + eventoMasPorcentajeAsis.porcentaje + " %";
-    $menorAsis.innerHTML = eventoBajoPorcentajeAsis.name + " " + eventoBajoPorcentajeAsis.porcentaje + " %";
+    $mayorAsis.innerHTML = eventoMasPorcentajeAsis.name + " " + eventoMasPorcentajeAsis.porcentaje.toFixed(2) + " %";
+    $menorAsis.innerHTML = eventoBajoPorcentajeAsis.name + " " + eventoBajoPorcentajeAsis.porcentaje.toFixed(2) + " %";
     $mayorCap.innerHTML = eventoMayorCapacidad[eventoMayorCapacidad.length - 1].name + " " + eventoMayorCapacidad[eventoMayorCapacidad.length - 1].capacity;
     // Segunda Tabla
     const catPassEvent = catSinRepPass.map((objet) => {
@@ -91,8 +91,8 @@ function templateTR(objet) {
   return (html = `
     <tr>
       <td>${objet.nombre}</td>
-      <td>$ ${objet.ganancias}</td>
-      <td>${objet.porcentaje} %</td>
+      <td>$ ${objet.ganancias.toLocaleString()}</td>
+      <td>${objet.porcentaje.toFixed(2)} %</td>
     </tr> `);
 }
 function imprimirTR(array, elemento) {
